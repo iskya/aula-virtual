@@ -1,0 +1,243 @@
+/* =====================================================
+   AULA VIRTUAL — Estilos compartidos
+   ===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul:       #1a3a5c;
+  --azul-claro: #2563eb;
+  --naranja:    #d97706;
+  --fondo:      #f0f4f8;
+  --blanco:     #ffffff;
+  --texto:      #1e293b;
+  --gris:       #64748b;
+  --borde:      #e2e8f0;
+  --radio:      12px;
+  --sombra:     0 4px 24px rgba(0,0,0,0.10);
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Header ── */
+header {
+  background: linear-gradient(135deg, var(--azul) 0%, #0f2540 100%);
+  color: var(--blanco);
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+header .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 0.4rem; }
+header p  { font-size: 1rem; opacity: 0.8; }
+
+/* ── Main container ── */
+main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+/* ── Botón volver ── */
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 100px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--texto);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.btn-volver:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.13); transform: translateY(-1px); }
+
+/* ── Cards grid (index) ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 2rem 1.5rem;
+  text-decoration: none;
+  color: var(--texto);
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.14); border-color: var(--color-card); }
+.card-icon { font-size: 2.5rem; }
+.card h2 { font-size: 1.25rem; font-weight: 700; color: var(--color-card); }
+.card p { font-size: 0.88rem; color: var(--gris); }
+.card .flecha { margin-top: auto; font-size: 0.85rem; color: var(--color-card); font-weight: 600; display: flex; align-items: center; gap: 0.3rem; }
+
+/* colores por materia */
+.card.fisica  { --color-card: #2563eb; }
+.card.electro { --color-card: #d97706; }
+
+/* ── Intro de p\u00e1gina de materia ── */
+.materia-header {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--color-materia);
+}
+.materia-header .chip {
+  display: inline-block;
+  background: color-mix(in srgb, var(--color-materia) 12%, white);
+  color: var(--color-materia);
+  border-radius: 100px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.materia-header h2 { font-size: 1.8rem; font-weight: 800; color: var(--texto); }
+
+/* ── Normas acordeon ── */
+.normas {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.normas summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: color-mix(in srgb, var(--color-materia) 8%, white);
+  color: var(--texto);
+  user-select: none;
+}
+.normas summary::-webkit-details-marker { display: none; }
+.normas summary .toggle {
+  width: 28px; height: 28px;
+  background: var(--color-materia);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.normas[open] summary .toggle { transform: rotate(45deg); }
+.normas-lista {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.norma {
+  display: flex;
+  gap: 0.9rem;
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  background: var(--fondo);
+  border-left: 3px solid var(--color-materia);
+}
+.norma-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+.norma-body strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--color-materia); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.norma-body p { font-size: 0.88rem; color: var(--texto); }
+
+/* ── Secci\u00f3n materiales ── */
+.materiales {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 1.75rem;
+}
+.materiales h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+.archivo-lista { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.archivo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.archivo-item:hover { background: var(--fondo); }
+.archivo-nombre { display: flex; align-items: center; gap: 0.6rem; font-size: 0.92rem; color: var(--texto); }
+.archivo-nombre span { font-size: 1.2rem; }
+.btn-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-materia);
+  color: #fff;
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.btn-dl:hover { opacity: 0.85; }
+.placeholder-msg {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gris);
+  font-size: 0.9rem;
+  border: 2px dashed var(--borde);
+  border-radius: 8px;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--gris);
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .archivo-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+@media (max-width: 400px) {
+  .grid { grid-template-columns: 1fr; }
+}

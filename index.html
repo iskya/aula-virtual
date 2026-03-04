@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula Virtual</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .intro {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      padding: 1.5rem 2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .intro p { color: var(--gris); font-size: 0.95rem; }
+    .seccion-titulo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gris);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin: 2rem 0 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">📚 Aula Virtual</div>
+    <h1>Material de Estudio</h1>
+    <p>Seleccioná tu materia para acceder a los materiales y las normas del aula</p>
+  </header>
+
+  <main>
+    <div class="intro">
+      <span style="font-size:2rem">👩‍🏫</span>
+      <p>Encontrarás aquí los materiales en PDF organizados por materia. Hacé clic en la tarjeta de tu curso para ver los archivos disponibles y las normas de convivencia.</p>
+    </div>
+
+    <p class="seccion-titulo">⚡ Física</p>
+    <div class="grid">
+
+      <a class="card fisica" href="fisica-4to-d/index.html">
+        <span class="card-icon">🔬</span>
+        <h2>Física</h2>
+        <p>4to año — División D</p>
+        <span class="flecha">Ver materiales →</span>
+      </a>
+
+      <a class="card fisica" href="fisica-5to-d/index.html">
+        <span class="card-icon">🔭</span>
+        <h2>Física</h2>
+        <p>5to año — División D</p>
+        <span class="flecha">Ver materiales →</span>
+      </a>
+
+      <a class="card fisica" href="fisica-5to-e/index.html">
+        <span class="card-icon">⚛️</span>
+        <h2>Física</h2>
+        <p>5to año — División E</p>
+        <span class="flecha">Ver materiales →</span>
+      </a>
+
+    </div>
+
+    <p class="seccion-titulo">⚡ Electrotecnia</p>
+    <div class="grid">
+
+      <a class="card electro" href="electrotecnia-4to-d/index.html">
+        <span class="card-icon">🔌</span>
+        <h2>Electrotecnia</h2>
+        <p>4to año — División D</p>
+        <span class="flecha">Ver materiales →</span>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Sitio actualizado por la profesora · Para consultas académicas usá el grupo de WhatsApp del curso</p>
+  </footer>
+
+</body>
+</html>
